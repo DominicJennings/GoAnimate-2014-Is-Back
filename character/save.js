@@ -11,19 +11,6 @@ const http = require("http");
 module.exports = function (req, res, url) {
 	if (req.method == "POST")
 		switch (url.pathname) {
-			case "/goapi/getCcCharCompositionXml/":
-				loadPost(req, res).then(([data]) =>
-					character
-						.save(Buffer.from(data.body))
-						.then((id) => {
-							var thumb = Buffer.from(data.thumbdata, "base64");
-							character.saveThumb(thumb, id);
-							res.end(`0${id}`);
-						})
-						.catch(() => res.end(`10`))
-				);
-				return true;
-				
 			case "/goapi/saveCCCharacter/":
 				loadPost(req, res).then(([data]) =>
 					character
