@@ -18,6 +18,6 @@ async function makeList(req, res, url) {
  * @returns {boolean}
  */
 module.exports = function (req, res, url) {
-	if (req.method != "POST" || url.path != "/goapi/getThemeList/?") return;
+	if (req.method != "POST" || url.path != "/goapi/getThemeList/") return;
 	makeList(req, res, url);
 };
